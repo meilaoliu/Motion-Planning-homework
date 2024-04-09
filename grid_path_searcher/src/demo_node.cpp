@@ -18,6 +18,9 @@
 #include "JPS_searcher.h"
 #include "backward.hpp"
 
+#include <dynamic_reconfigure/server.h>
+#include <grid_path_searcher/HeuristicConfig.h>
+
 using namespace std;
 using namespace Eigen;
 
@@ -59,6 +62,12 @@ void rcvWaypointsCallback(const nav_msgs::Path & wp)
     target_pt << wp.poses[0].pose.position.x,
                  wp.poses[0].pose.position.y,
                  wp.poses[0].pose.position.z;
+
+    // target_pt << 4.90,4.90,0; //设为固定的用于对比
+    ROS_INFO("\n[node] receive the planning target, start is: (%f, %f, %f), target is: (%f, %f, %f)",
+             _start_pt(0), _start_pt(1), _start_pt(2), target_pt(0), target_pt(1), target_pt(2));
+    pathFinding(_start_pt, target_pt); 
+
 
     ROS_INFO("[node] receive the planning target");
     pathFinding(_start_pt, target_pt); 
@@ -144,9 +153,49 @@ void pathFinding(const Vector3d start_pt, const Vector3d target_pt)
 #endif
 }
 
+
+// void callback(grid_path_searcher::HeuristicConfig &config, uint32_t level) {
+//     ROS_INFO("Reconfigure Request: Heuristic type %d", config.heuristic);
+//     _astar_path_finder->setHeuristicType(static_cast<HeuristicType>(config.heuristic));
+//     _astar_path_finder->setFactor(config.factor); // 更新factor值
+// }
+
+void callback(grid_path_searcher::HeuristicConfig &config, uint32_t level) {
+    std::string heuristic_name;
+    switch (config.heuristic) {
+        case EUCLIDEAN:
+            heuristic_name = "Euclidean";
+            break;
+        case MANHATTAN:
+            heuristic_name = "Manhattan";
+            break;
+        case DIAGONAL:
+            heuristic_name = "Diagonal";
+            break;
+        case DIJKSTRA:
+            heuristic_name = "Dijkstra";
+            break;
+        default:
+            heuristic_name = "Unknown";
+    }
+
+    ROS_INFO("Reconfigure Request: Heuristic type %s", heuristic_name.c_str());
+    _astar_path_finder->setHeuristicType(static_cast<HeuristicType>(config.heuristic));
+    _astar_path_finder->setFactor(config.factor); // 更新factor值
+}
+
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "demo_node");
+
+
+    dynamic_reconfigure::Server<grid_path_searcher::HeuristicConfig> server;
+    dynamic_reconfigure::Server<grid_path_searcher::HeuristicConfig>::CallbackType f;
+
+    f = boost::bind(&callback, _1, _2);
+    server.setCallback(f);
+
+
     ros::NodeHandle nh("~");
 
     _map_sub  = nh.subscribe( "map",       1, rcvPointCloudCallBack );

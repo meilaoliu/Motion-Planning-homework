@@ -9,16 +9,25 @@
 #include "node.h"
 #include <cmath>
 
+enum HeuristicType {
+    EUCLIDEAN,
+    MANHATTAN,
+    DIAGONAL,
+    DIJKSTRA // 启发函数类型
+};
+
 class AstarPathFinder
 {	
 	private:
-
+	  double factor_; // 用于存储动态配置中设置的因子
 	protected:
 		uint8_t * data;
 		GridNodePtr *** GridNodeMap;
 		Eigen::Vector3i goalIdx;
 		int GLX_SIZE, GLY_SIZE, GLZ_SIZE;
 		int GLXYZ_SIZE, GLYZ_SIZE;
+
+		HeuristicType heuristic_type_; // 添加启发函数类型成员变量
 
 		double resolution, inv_resolution;
 		double gl_xl, gl_yl, gl_zl;
@@ -41,8 +50,15 @@ class AstarPathFinder
 		Eigen::Vector3i coord2gridIndex(const Eigen::Vector3d & pt);
 
 	public:
-		AstarPathFinder(){};
+	    AstarPathFinder() : heuristic_type_(EUCLIDEAN), factor_(1.0) {}; // 默认使用欧几里得启发函数
+		//AstarPathFinder(){};
 		~AstarPathFinder(){};
+
+        void setHeuristicType(HeuristicType type) {
+            heuristic_type_ = type; // 设置启发函数类型
+        }
+		void setFactor(double factor) { factor_ = factor; } // 设置因子的方法
+		
 		void AstarGraphSearch(Eigen::Vector3d start_pt, Eigen::Vector3d end_pt);
 		void resetGrid(GridNodePtr ptr);
 		void resetUsedGrids();

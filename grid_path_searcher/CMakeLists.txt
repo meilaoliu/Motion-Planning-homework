@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.2)
 project(grid_path_searcher)
 
 find_package(catkin REQUIRED COMPONENTS 
@@ -6,6 +6,8 @@ find_package(catkin REQUIRED COMPONENTS
     std_msgs
     nav_msgs
     visualization_msgs 
+    dynamic_reconfigure
+    
 )
 
 find_package(Eigen3 REQUIRED)
@@ -13,9 +15,18 @@ find_package(PCL REQUIRED)
 
 set(Eigen3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 
-catkin_package(
-  INCLUDE_DIRS include
+#加载动态配置文件
+generate_dynamic_reconfigure_options(
+  cfg/Astar_searcher.cfg
 )
+
+
+catkin_package(
+  
+  INCLUDE_DIRS include
+  
+)
+
 
 include_directories(
     include 
@@ -39,6 +50,11 @@ target_link_libraries(demo_node
     ${catkin_LIBRARIES}
     ${PCL_LIBRARIES} 
 )
+
+# 确保在编译demo_node之前生成动态配置文件
+add_dependencies(demo_node ${PROJECT_NAME}_gencfg)
+
+
 
 add_executable ( random_complex 
     src/random_complex_generator.cpp )
