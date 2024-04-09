@@ -59,11 +59,11 @@ void rcvWaypointsCallback(const nav_msgs::Path & wp)
         return;
 
     Vector3d target_pt;
-    target_pt << wp.poses[0].pose.position.x,
-                 wp.poses[0].pose.position.y,
-                 wp.poses[0].pose.position.z;
+    // target_pt << wp.poses[0].pose.position.x,
+    //              wp.poses[0].pose.position.y,
+    //              wp.poses[0].pose.position.z;
 
-    // target_pt << 4.90,4.90,0; //设为固定的用于对比
+    target_pt << 3.90,3.90,0; //设为固定的用于对比
     ROS_INFO("\n[node] receive the planning target, start is: (%f, %f, %f), target is: (%f, %f, %f)",
              _start_pt(0), _start_pt(1), _start_pt(2), target_pt(0), target_pt(1), target_pt(2));
     pathFinding(_start_pt, target_pt); 

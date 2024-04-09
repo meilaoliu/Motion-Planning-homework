@@ -74,8 +74,8 @@ vector<Vector3d> AstarPathFinder::getVisitedNodes()
     for(int i = 0; i < GLX_SIZE; i++)
         for(int j = 0; j < GLY_SIZE; j++)
             for(int k = 0; k < GLZ_SIZE; k++){   
-                //if(GridNodeMap[i][j][k]->id != 0) // visualize all nodes in open and close list
-                if(GridNodeMap[i][j][k]->id == -1)  // visualize nodes in close list only
+                if(GridNodeMap[i][j][k]->id != 0) // visualize all nodes in open and close list
+                // if(GridNodeMap[i][j][k]->id == -1)  // visualize nodes in close list only
                     visited_nodes.push_back(GridNodeMap[i][j][k]->coord);
             }
 
@@ -236,23 +236,22 @@ double AstarPathFinder::getHeu(GridNodePtr node1, GridNodePtr node2)
    double dy = abs(node1->coord(1)-node2->coord(1));
    double dz = abs(node1->coord(2)-node2->coord(2));
    double heuristic_result = 0.0; // 初始化启发式计算结果
-
-//    double Euclidean_Distance = sqrt(dx*dx+dy*dy+dz*dz);
-
-//    fcore = Euclidean_Distance;
-   //fcore = 5*Euclidean_Distance;
-   //fcore = Euclidean_Distance* (1.0 + epsilon);
+   double g = node1->gScore; // 从起点到当前节点的实际成本
 
     switch(heuristic_type_) {
     case EUCLIDEAN: // 欧式距离
         heuristic_result = std::sqrt(dx * dx + dy * dy + dz * dz);
         break;
     case MANHATTAN: // 曼哈顿距离
-        heuristic_result = dx + dy + dz;
+         heuristic_result = dx + dy + dz;
         break;
     case DIAGONAL: {
-        double diagonal_min = std::min({dx, dy, dz});
-        heuristic_result = (dx + dy + dz) + (std::sqrt(3.0) - 3) * diagonal_min;
+        // double diagonal_min = std::min({dx, dy, dz});
+        // heuristic_result = (dx + dy + dz) + (std::sqrt(3.0) - 3) * diagonal_min;
+         double dmin = min( min(dx, dy), dz);
+        double dmax = max(max(dx, dy), dz);
+        double dmid = dx + dy + dz - dmin - dmax;
+        heuristic_result = (sqrt(3) - sqrt(2))*dmin + (sqrt(2) - 1)*dmid + dmax;
         break;
     }
     case DIJKSTRA: // Dijkstra 算法，不使用启发函数
@@ -262,6 +261,8 @@ double AstarPathFinder::getHeu(GridNodePtr node1, GridNodePtr node2)
         heuristic_result = std::sqrt(dx * dx + dy * dy + dz * dz); // 默认使用欧几里得距离
         break;
     }
+    // 加入Tie-breakingh(n) = (1 + ε) * h(n) + ε * g(n)
+    // heuristic_result = (1 + epsilon) * heuristic_result + epsilon * g;
     return  factor_*heuristic_result; // 返回计算结果
 }
 

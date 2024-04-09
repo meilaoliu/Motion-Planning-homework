@@ -38,8 +38,8 @@ vector<float>   pointSquaredDistance;
 void RandomMapGenerate()
 {  
    random_device rd;
-   default_random_engine eng(rd());
-   //default_random_engine eng(40); // 使用42作为种子(unsigned int类型),使得每次生成的地图是固定的
+   // default_random_engine eng(rd());
+   default_random_engine eng(42); // 使用42作为种子(unsigned int类型),使得每次生成的地图是固定的
    
    uniform_real_distribution<double> rand_x = uniform_real_distribution<double>(_x_l, _x_h );
    uniform_real_distribution<double> rand_y = uniform_real_distribution<double>(_y_l, _y_h );
