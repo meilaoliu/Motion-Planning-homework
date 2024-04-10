@@ -236,7 +236,7 @@ double AstarPathFinder::getHeu(GridNodePtr node1, GridNodePtr node2)
    double dy = abs(node1->coord(1)-node2->coord(1));
    double dz = abs(node1->coord(2)-node2->coord(2));
    double heuristic_result = 0.0; // 初始化启发式计算结果
-   double g = node1->gScore; // 从起点到当前节点的实际成本
+   //double g = node1->gScore; // 从起点到当前节点的实际成本
 
     switch(heuristic_type_) {
     case EUCLIDEAN: // 欧式距离
@@ -262,7 +262,9 @@ double AstarPathFinder::getHeu(GridNodePtr node1, GridNodePtr node2)
         break;
     }
     // 加入Tie-breakingh(n) = (1 + ε) * h(n) + ε * g(n)
-    // heuristic_result = (1 + epsilon) * heuristic_result + epsilon * g;
+    //heuristic_result = (1 + epsilon) * heuristic_result + epsilon * g; 发生内存错误
+    // 加入Tie-breakingh(n) = (1 + ε) * h(n)
+     heuristic_result = (1 + epsilon) * heuristic_result;
     return  factor_*heuristic_result; // 返回计算结果
 }
 
