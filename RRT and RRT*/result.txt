@@ -1,0 +1,182 @@
+RRT result (no choose parent no rewire)  
+ goal_ = Eigen::Vector3d(23.806, 5.672, 1.660);  // 指定固定终点
+ start_.setZero();
+ 
+[ INFO] [1715063228.984004559]: 
+-----------------------------
+goal rcved at 18.7583 3.10198       0
+[ INFO] [1715063228.987917489]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063229.087687763]: [RRT*]: first path length: 41.6086, use_time: 0.00572312
+[ INFO] [1715063229.088795808]: [RRT*] final path len: 36.496
+[ WARN] [1715063234.702692023]: 3D Goal Set
+[ INFO] [1715063234.702932264]: Setting goal: Frame:map, Position(19.049, 9.845, 0.000), Orientation(0.000, 0.000, 0.696, 0.718) = Angle: 1.538
+
+[ INFO] [1715063234.703597323]: 
+-----------------------------
+goal rcved at 19.0491 9.84457       0
+[ INFO] [1715063234.704381285]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063234.799995240]: [RRT*]: first path length: 38.4953, use_time: 0.00341548
+[ INFO] [1715063234.800056085]: [RRT*] final path len: 35.7848
+[ WARN] [1715063243.030669623]: 3D Goal Set
+[ INFO] [1715063243.030726230]: Setting goal: Frame:map, Position(20.277, 7.741, 0.000), Orientation(0.000, 0.000, 0.697, 0.717) = Angle: 1.542
+
+[ INFO] [1715063243.030948403]: 
+-----------------------------
+goal rcved at 20.2768 7.74078       0
+[ INFO] [1715063243.031265063]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063243.094999147]: [RRT*]: first path length: 41.8816, use_time: 0.000447696
+[ INFO] [1715063243.095063543]: [RRT*] final path len: 39.7943
+[ WARN] [1715063248.701551532]: 3D Goal Set
+[ INFO] [1715063248.701592231]: Setting goal: Frame:map, Position(18.582, 2.638, 0.000), Orientation(0.000, 0.000, 0.706, 0.708) = Angle: 1.568
+
+[ INFO] [1715063248.701895607]: 
+-----------------------------
+goal rcved at  18.582 2.63774       0
+[ INFO] [1715063248.702158360]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063248.773634272]: [RRT*]: first path length: 43.2542, use_time: 0.000396896
+[ INFO] [1715063248.773704101]: [RRT*] final path len: 43.2542
+[ WARN] [1715063253.176437917]: 3D Goal Set
+[ INFO] [1715063253.176488370]: Setting goal: Frame:map, Position(19.195, -1.713, 0.000), Orientation(0.000, 0.000, 0.698, 0.716) = Angle: 1.547
+
+[ INFO] [1715063253.176763445]: 
+-----------------------------
+goal rcved at  19.1952 -1.71286        0
+[ INFO] [1715063253.177088387]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063253.245779406]: [RRT*]: first path length: 42.6543, use_time: 0.00206148
+[ INFO] [1715063253.245874211]: [RRT*] final path len: 41.3243
+[ WARN] [1715063269.171960950]: 3D Goal Set
+[ INFO] [1715063269.171999422]: Setting goal: Frame:map, Position(22.548, 3.477, 0.000), Orientation(0.000, 0.000, 0.693, 0.721) = Angle: 1.530
+
+[ INFO] [1715063269.172170379]: 
+-----------------------------
+goal rcved at 22.5476 3.47661       0
+[ INFO] [1715063269.172512754]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063269.237383994]: [RRT*]: first path length: 40.769, use_time: 0.00154963
+[ INFO] [1715063269.237512487]: [RRT*] final path len: 37.7578
+[ WARN] [1715063275.223886902]: 3D Goal Set
+[ INFO] [1715063275.223947675]: Setting goal: Frame:map, Position(21.942, 5.397, 0.000), Orientation(0.000, 0.000, 0.723, 0.691) = Angle: 1.616
+
+[ INFO] [1715063275.224171019]: 
+-----------------------------
+goal rcved at 21.9415 5.39719       0
+[ INFO] [1715063275.224538219]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063275.302057155]: [RRT*]: first path length: 48.4168, use_time: 0.000941006
+[ INFO] [1715063275.302136756]: [RRT*] final path len: 45.7098
+[ WARN] [1715063279.451771046]: 3D Goal Set
+[ INFO] [1715063279.451810994]: Setting goal: Frame:map, Position(21.558, 4.643, 0.000), Orientation(0.000, 0.000, 0.728, 0.685) = Angle: 1.632
+
+[ INFO] [1715063279.452054357]: 
+-----------------------------
+goal rcved at 21.5584 4.64308       0
+[ INFO] [1715063279.452352892]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063279.520160994]: [RRT*]: first path length: 34.8248, use_time: 0.00128569
+[ INFO] [1715063279.520235876]: [RRT*] final path len: 33.979
+[ WARN] [1715063286.016029110]: 3D Goal Set
+[ INFO] [1715063286.016086260]: Setting goal: Frame:map, Position(20.937, 0.059, 0.000), Orientation(0.000, 0.000, 0.726, 0.688) = Angle: 1.624
+
+[ INFO] [1715063286.016400669]: 
+-----------------------------
+goal rcved at   20.9372 0.0588665         0
+[ INFO] [1715063286.016669064]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063286.081188921]: [RRT*]: first path length: 34.9346, use_time: 0.000219886
+[ INFO] [1715063286.081244571]: [RRT*] final path len: 34.9346
+[ WARN] [1715063290.046751766]: 3D Goal Set
+[ INFO] [1715063290.046790555]: Setting goal: Frame:map, Position(18.711, -1.726, 0.000), Orientation(0.000, 0.000, 0.731, 0.682) = Angle: 1.640
+
+[ INFO] [1715063290.047037691]: 
+-----------------------------
+goal rcved at 18.7109 -1.7256       0
+[ INFO] [1715063290.047289190]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063290.117360886]: [RRT*]: firststart_.setZero(); path length: 51.4296, use_time: 0.00104484
+[ INFO] [1715063290.117428109]: [RRT*] final path len: 39.1047
+
+
+goal rcved at 15.2531 21.8817       0
+[ INFO] [1715063367.398903135]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063367.467918217]: [RRT*]: first path length: 31.526, use_time: 0.000456311
+[ INFO] [1715063367.468002335]: [RRT*] final path len: 31.526
+[ WARN] [1715063376.194753556]: 3D Goal Set
+[ INFO] [1715063376.194792516]: Setting goal: Frame:map, Position(19.653, 1.097, 0.000), Orientation(0.000, 0.000, 0.712, 0.702) = Angle: 1.585
+
+[ INFO] [1715063376.195009653]: 
+-----------------------------
+goal rcved at 19.6527 1.09722       0
+[ INFO] [1715063376.195409652]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063376.276913550]: [RRT*]: first path length: 35.1799, use_time: 0.0012028
+[ INFO] [1715063376.277006995]: [RRT*] final path len: 35.1799
+
+
+
+RRT*(with rewire and choose parent)
+ goal_ = Eigen::Vector3d(23.806, 5.672, 1.660);  // 指定固定终点
+ start_.setZero();
+ 
+ 
+  WARN] [1715063539.662525568]: 3D Goal Set
+[ INFO] [1715063539.663164574]: Setting goal: Frame:map, Position(20.782, 7.107, 0.000), Orientation(0.000, 0.000, 0.733, 0.680) = Angle: 1.645
+
+[ INFO] [1715063539.663840020]: 
+-----------------------------
+goal rcved at 20.7824 7.10696       0
+[ INFO] [1715063539.667560198]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063539.869194176]: [RRT*]: first path length: 27.349, use_time: 0.00382131
+[ INFO] [1715063539.870272884]: [RRT*] final path len: 24.9397
+[ WARN] [1715063547.918613282]: 3D Goal Set
+[ INFO] [1715063547.918801373]: Setting goal: Frame:map, Position(20.898, 3.662, 0.000), Orientation(0.000, 0.000, 0.731, 0.682) = Angle: 1.641
+
+[ INFO] [1715063547.919473993]: 
+-----------------------------
+goal rcved at 20.8979 3.66187       0
+[ INFO] [1715063547.920320906]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063548.121984434]: [RRT*]: first path length: 35.6754, use_time: 0.0107636
+[ INFO] [1715063548.122041343]: [RRT*] final path len: 24.8662
+[ WARN] [1715063555.475044503]: 3D Goal Set
+[ INFO] [1715063555.475084484]: Setting goal: Frame:map, Position(22.204, 4.878, 0.000), Orientation(0.000, 0.000, 0.710, 0.705) = Angle: 1.578
+
+[ INFO] [1715063555.475366397]: 
+-----------------------------
+goal rcved at    22.2036    4.87783 3.8147e-06
+[ INFO] [1715063555.475663800]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063555.676504306]: [RRT*]: first path length: 25.8175, use_time: 0.00539082
+[ INFO] [1715063555.676569791]: [RRT*] final path len: 25.0433
+[ WARN] [1715063560.732967119]: 3D Goal Set
+[ INFO] [1715063560.733006943]: Setting goal: Frame:map, Position(21.020, -1.954, 0.000), Orientation(0.000, 0.000, 0.730, 0.683) = Angle: 1.637
+
+[ INFO] [1715063560.733262395]: 
+-----------------------------
+goal rcved at  21.0201 -1.95358        0
+[ INFO] [1715063560.733547509]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063560.934792793]: [RRT*]: first path length: 26.572, use_time: 0.000829012
+[ INFO] [1715063560.934884061]: [RRT*] final path len: 24.8615
+[ WARN] [1715063566.478387962]: 3D Goal Set
+[ INFO] [1715063566.478438628]: Setting goal: Frame:map, Position(21.607, -2.355, 0.000), Orientation(0.000, 0.000, 0.726, 0.688) = Angle: 1.624
+
+[ INFO] [1715063566.478644462]: 
+-----------------------------
+goal rcved at  21.6071 -2.35512        0
+[ INFO] [1715063566.478958031]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063566.680923466]: [RRT*]: first path length: 26.3826, use_time: 0.000816328
+[ INFO] [1715063566.680983479]: [RRT*] final path len: 25.2026
+[ WARN] [1715063590.258911111]: 3D Goal Set
+[ INFO] [1715063590.258952526]: Setting goal: Frame:map, Position(24.482, 4.036, 0.000), Orientation(0.000, 0.000, 0.719, 0.695) = Angle: 1.604
+
+[ INFO] [1715063590.259133351]: 
+-----------------------------
+goal rcved at 24.4819 4.03639       0
+[ INFO] [1715063590.259431468]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063590.460458097]: [RRT*]: first path length: 33.9541, use_time: 0.000616705
+[ INFO] [1715063590.460555757]: [RRT*] final path len: 25.0396
+[ WARN] [1715063602.573547869]: 3D Goal Set
+[ INFO] [1715063602.573593656]: Setting goal: Frame:map, Position(23.834, 1.452, 0.000), Orientation(0.000, 0.000, 0.720, 0.694) = Angle: 1.609
+
+[ INFO] [1715063602.573859391]: 
+-----------------------------
+goal rcved at 23.8337 1.45167       0
+[ INFO] [1715063602.574187515]: [RRT*]: RRT starts planning a path
+[ INFO] [1715063602.775363527]: [RRT*]: first path length: 29.2226, use_time: 0.00142277
+[ INFO] [1715063602.775447947]: [RRT*] final path len: 25.1727
+
+
+
+ 
+ 
